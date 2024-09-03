@@ -1,0 +1,19 @@
+<!-- my_robot_display.launch -->
+<launch>
+    <!-- Load URDF into parameter server -->
+    <!-- <param name="robot_description" textfile="$(find wow_description)/baxter_description/urdf/baxter.urdf.xacro" /> -->
+    <!-- <param name="robot_description" command="xacro $(find wow_description)/baxter_description/urdf/baxter.urdf.xacro"/> -->
+    <!-- <param name="robot_description" command="xacro $(find wow_description)/franka_description/robots/panda_arm.urdf.xacro" /> -->
+    <param name="robot_description" textfile="$(find wow_description)/robot/wow_large/urdf/wow_large.urdf" />
+
+    <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui">
+        <param name="use_gui" value="True" />
+    </node>
+    <!-- Start robot state publisher -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+        respawn="false" output="screen" />
+
+    <!-- Start RViz with URDF model display -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find wow_description)/rviz/robot.rviz"
+        respawn="false" output="screen" />
+</launch>

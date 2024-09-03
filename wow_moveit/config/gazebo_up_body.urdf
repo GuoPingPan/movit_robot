@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by
+Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="up_body">
+
+    <link name="world" />
+
+    <joint name="world_fix" type="fixed">
+        <parent link="world" />
+        <child link="base_link" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+    
+    <link name="base_link">
+        <!-- Define visual and collision -->
+        <visual>
+            <geometry>
+                <sphere radius="0.01" />
+                <!-- Example: a small sphere -->
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <sphere radius="0.01" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.1" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+    </link>
+    <joint name="dummy_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="base" />
+        <origin xyz="0 0 0" />
+        <!-- Example: adjust the origin relative to parent link -->
+    </joint>
+    <link name="base">
+        <inertial>
+            <origin xyz="0.012283 -0.00239 -0.050054" rpy="0 0 0" />
+            <mass value="2.4906" />
+            <inertia ixx="0.0054869" ixy="3.5925E-08" ixz="3.6623E-09" iyy="0.0035821" iyz="-8.8518E-08" izz="0.0033077" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wow_description/meshes/base.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.75294 0.75294 0.75294 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wow_description/meshes/base.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_1_link">
+        <inertial>
+            <origin xyz="0.013474 0.030402 0.0064645" rpy="0 0 0" />
+            <mass value="0.079025" />
+            <inertia ixx="4.1444E-05" ixy="-4.8043E-06" ixz="-1.0203E-06" iyy="2.3549E-05" iyz="-1.6139E-06" izz="3.1271E-05" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wow_description/meshes/left_1_link.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.66667 0.69804 0.76863 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wow_description/meshes/left_1_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="left_1_joint" type="revolute">
+        <origin xyz="0 0.12962 0.076557" rpy="0 0 0" />
+        <parent link="base" />
+        <child link="left_1_link" />
+        <axis xyz="0 -0.97815 -0.20791" />
+        <limit lower="-3.14" upper="3.14" effort="36" velocity="3" />
+    </joint>
+    <link name="left_2_link">
+        <inertial>
+            <origin xyz="0.015851 0.021696 -0.051129" rpy="0 0 0" />
+            <mass value="0.11148" />
+            <inertia ixx="5.4448E-05" ixy="4.2798E-06" ixz="-1.5289E-05" iyy="6.3063E-05" iyz="9.363E-06" izz="6.4339E-05" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wow_description/meshes/left_2_link.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.66667 0.69804 0.76863 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wow_description/meshes/left_2_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="left_2_joint" type="revolute">
+        <origin xyz="0 0.039126 0.0083165" rpy="0 0 0" />
+        <parent link="left_1_link" />
+        <child link="left_2_link" />
+        <axis xyz="-1 0 0" />
+        <limit lower="-3.14" upper="3.14" effort="36" velocity="3" />
+    </joint>
+    <link name="left_3_link">
+        <inertial>
+            <origin xyz="-0.00248969235662033 0.00293484438012537 -0.0526008042337718" rpy="0 0 0" />
+            <mass value="0.238706933610647" />
+            <inertia ixx="9.87943585627899E-05" ixy="9.13605860329468E-07" ixz="-1.27260656838278E-05" iyy="0.000103787323036799" iyz="3.1845599398437E-06" izz="0.000101690556047408" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wow_description/meshes/left_3_link.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.666666666666667 0.698039215686274 0.768627450980392 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wow_description/meshes/left_3_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="left_3_joint" type="revolute">
+        <origin xyz="0 0.025 -0.1105" rpy="0 0 0" />
+        <parent link="left_2_link" />
+        <child link="left_3_link" />
+        <axis xyz="0 0 1" />
+        <limit lower="-3.14" upper="3.14" effort="36" velocity="3" />
+    </joint>
+    <link name="left_4_link">
+        <inertial>
+            <origin xyz="9.5034E-05 0.0089784 -0.046116" rpy="0 0 0" />
+            <mass value="0.15481" />
+            <inertia ixx="5.985E-05" ixy="-2.5765E-07" ixz="-2.4359E-08" iyy="5.3653E-05" iyz="-9.668E-06" izz="7.4897E-05" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wow_description/meshes/left_4_link.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.66667 0.69804 0.76863 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wow_description/meshes/left_4_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="left_4_joint" type="revolute">
+        <origin xyz="0 0 -0.096" rpy="0 0 0" />
+        <parent link="left_3_link" />
+        <child link="left_4_link" />
+        <axis xyz="0 -1 0" />
+        <limit lower="-3.14" upper="3.14" effort="36" velocity="3" />
+    </joint>
+    <link name="left_5_link">
+        <inertial>
+            <origin xyz="-8.09721458582408E-05 0.00389438034148359 -0.0239422931896223" rpy="0 0 0" />
+            <mass value="0.0898368868007285" />
+            <inertia ixx="2.59830076366852E-05" ixy="-1.11403371340546E-07" ixz="1.7556763011675E-09" iyy="2.77594203686851E-05" iyz="2.89508784263438E-06" izz="2.46912827577429E-05" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wow_description/meshes/left_5_link.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.666666666666667 0.698039215686274 0.768627450980392 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wow_description/meshes/left_5_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="left_5_joint" type="revolute">
+        <origin xyz="0 0 -0.0851" rpy="0 0 0" />
+        <parent link="left_4_link" />
+        <child link="left_5_link" />
+        <axis xyz="0 0 -1" />
+        <limit lower="-3.14" upper="3.14" effort="16" velocity="3" />
+    </joint>
+    <link name="left_6_link">
+        <inertial>
+            <origin xyz="-0.00114022282567267 0.00842562955320589 -0.0430839242381136" rpy="0 0 0" />
+            <mass value="0.0972547290256352" />
+            <inertia ixx="4.49766477426306E-05" ixy="1.84361265120315E-06" ixz="3.56468055813466E-06" iyy="4.3525104373625E-05" iyz="-3.22526849067065E-06" izz="2.30163152004137E-05" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wow_description/meshes/left_6_link.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.666666666666667 0.698039215686274 0.768627450980392 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wow_description/meshes/left_6_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="left_6_joint" type="revolute">
+        <origin xyz="0 0 -0.03" rpy="0 0 0" />
+        <parent link="left_5_link" />
+        <child link="left_6_link" />
+        <axis xyz="0 1 0" />
+        <limit lower="-3.14" upper="3.14" effort="3" velocity="3" />
+    </joint>
+    <link name="left_7_link">
+        <inertial>
+            <origin xyz="0.00416235633504741 0.00363480550919076 -0.069188042443997" rpy="0 0 0" />
+            <mass value="0.145928807645556" />
+            <inertia ixx="5.54746846940498E-05" ixy="2.34964405166679E-07" ixz="-4.20246002211186E-06" iyy="5.65107461827259E-05" iyz="-2.17766328983983E-06" izz="4.33617818999327E-05" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wow_description/meshes/left_7_link.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.666666666666667 0.698039215686274 0.768627450980392 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wow_description/meshes/left_7_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="left_7_joint" type="revolute">
+        <origin xyz="0 0.001 -0.053" rpy="0 0 0" />
+        <parent link="left_6_link" />
+        <child link="left_7_link" />
+        <axis xyz="1 0 0" />
+        <limit lower="-3.14" upper="3.14" effort="3" velocity="3" />
+    </joint>
+    <link name="left_8_link">
+        <inertial>
+            <origin xyz="0.00092878 -0.013414 -0.036076" rpy="0 0 0" />
+            <mass value="0.042061" />
+            <inertia ixx="1.3299E-05" ixy="-2.4192E-07" ixz="-6.5064E-07" iyy="2.3234E-05" iyz="-1.0291E-06" izz="1.4603E-05" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wow_description/meshes/left_8_link.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.79216 0.81961 0.93333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wow_description/meshes/left_8_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="left_8_joint" type="revolute">
+        <origin xyz="0 0 -0.082" rpy="0 0 0" />
+        <parent link="left_7_link" />
+        <child link="left_8_link" />
+        <axis xyz="1 0 0" />
+        <limit lower="-3.14" upper="3.14" effort="3" velocity="3" />
+    </joint>
+    <link name="right_1_link">
+        <inertial>
+            <origin xyz="0.0134735424850818 -0.0304032410783886 0.00646315691708459" rpy="0 0 0" />
+            <mass value="0.0790253533347839" />
+            <inertia ixx="4.14438899364807E-05" ixy="4.80314396792033E-06" ixz="-1.02206722064909E-06" iyy="2.36596641764565E-05" iyz="1.66250909002592E-06" izz="3.11609476791024E-05" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wow_description/meshes/right_1_link.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.666666666666667 0.698039215686274 0.768627450980392 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wow_description/meshes/right_1_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="right_1_joint" type="revolute">
+        <origin xyz="0 -0.12962 0.076557" rpy="0 0 0" />
+        <parent link="base" />
+        <child link="right_1_link" />
+        <axis xyz="0 0.97815 -0.20791" />
+        <limit lower="-3.14" upper="3.14" effort="36" velocity="3" />
+    </joint>
+    <link name="right_2_link">
+        <inertial>
+            <origin xyz="0.0158505733437823 -0.0216935215716004 -0.0511306952907706" rpy="0 0 0" />
+            <mass value="0.111448356501863" />
+            <inertia ixx="5.44158616184592E-05" ixy="-4.30167474805824E-06" ixz="-1.52828139153949E-05" iyy="6.30561735135668E-05" iyz="-9.35489101676288E-06" izz="6.43229376244935E-05" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wow_description/meshes/right_2_link.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.666666666666667 0.698039215686274 0.768627450980392 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wow_description/meshes/right_2_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="right_2_joint" type="revolute">
+        <origin xyz="0 -0.039126 0.0083165" rpy="0 0 0" />
+        <parent link="right_1_link" />
+        <child link="right_2_link" />
+        <axis xyz="-1 0 0" />
+        <limit lower="-3.14" upper="3.14" effort="36" velocity="3" />
+    </joint>
+    <link name="right_3_link">
+        <inertial>
+            <origin xyz="-0.00249395519051818 -0.00292879026969153 -0.0526305114764832" rpy="0 0 0" />
+            <mass value="0.23887196900758" />
+            <inertia ixx="9.9056979803628E-05" ixy="-9.03221691528692E-07" ixz="-1.27938710037315E-05" iyy="0.000104013285281101" iyz="-3.18420559187731E-06" izz="0.000101840030338494" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wow_description/meshes/right_3_link.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.666666666666667 0.698039215686274 0.768627450980392 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wow_description/meshes/right_3_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="right_3_joint" type="revolute">
+        <origin xyz="0 -0.025 -0.1105" rpy="0 0 0" />
+        <parent link="right_2_link" />
+        <child link="right_3_link" />
+        <axis xyz="0 0 1" />
+        <limit lower="-3.14" upper="3.14" effort="36" velocity="3" />
+    </joint>
+    <link name="right_4_link">
+        <inertial>
+            <origin xyz="-0.000886516833894228 -0.00897841827868234 -0.046107912317484" rpy="0 0 0" />
+            <mass value="0.154808535914561" />
+            <inertia ixx="5.98555264773288E-05" ixy="-9.16796085294802E-08" ixz="2.82551393645645E-07" iyy="5.36529600735784E-05" iyz="9.67098874217089E-06" izz="7.48914991792591E-05" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wow_description/meshes/right_4_link.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wow_description/meshes/right_4_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="right_4_joint" type="revolute">
+        <origin xyz="0 0 -0.096" rpy="0 0 0" />
+        <parent link="right_3_link" />
+        <child link="right_4_link" />
+        <axis xyz="0 1 0" />
+        <limit lower="-3.14" upper="3.14" effort="36" velocity="3" />
+    </joint>
+    <link name="right_5_link">
+        <inertial>
+            <origin xyz="-0.00032996 -0.0038944 -0.02394" rpy="0 0 0" />
+            <mass value="0.089837" />
+            <inertia ixx="2.5983E-05" ixy="-1.6108E-07" ixz="-2.3921E-08" iyy="2.7759E-05" iyz="-2.8927E-06" izz="2.4692E-05" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wow_description/meshes/right_5_link.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.79216 0.81961 0.93333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wow_description/meshes/right_5_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="right_5_joint" type="revolute">
+        <origin xyz="-0.0014606 0 -0.085087" rpy="0 0 0" />
+        <parent link="right_4_link" />
+        <child link="right_5_link" />
+        <axis xyz="-0.017163 0 -0.99985" />
+        <limit lower="-3.14" upper="3.14" effort="16" velocity="3" />
+    </joint>
+    <link name="right_6_link">
+        <inertial>
+            <origin xyz="-0.00188313388690023 -0.00842562266866698 -0.0432690885587548" rpy="0 0 0" />
+            <mass value="0.097254676705112" />
+            <inertia ixx="4.50921630158091E-05" ixy="-1.78804684170558E-06" ixz="3.17586389171684E-06" iyy="4.35250866533771E-05" iyz="3.25292797860358E-06" izz="2.29007801069132E-05" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wow_description/meshes/right_6_link.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.666666666666667 0.698039215686274 0.768627450980392 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wow_description/meshes/right_6_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="right_6_joint" type="revolute">
+        <origin xyz="-0.00051489 0 -0.029996" rpy="0 0 0" />
+        <parent link="right_5_link" />
+        <child link="right_6_link" />
+        <axis xyz="0 -1 0" />
+        <limit lower="-3.14" upper="3.14" effort="3" velocity="3" />
+    </joint>
+    <link name="right_7_link">
+        <inertial>
+            <origin xyz="8.91475507868791E-05 0.00363480595720386 -0.0690313206098698" rpy="0 0 0" />
+            <mass value="0.145928804744434" />
+            <inertia ixx="5.53268847438205E-05" ixy="1.97554103583722E-07" ixz="-4.40785013401683E-06" iyy="5.65107460489258E-05" iyz="-2.18137596872123E-06" izz="4.35095835241797E-05" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wow_description/meshes/right_7_link.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.666666666666667 0.698039215686274 0.768627450980392 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wow_description/meshes/right_7_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="right_7_joint" type="revolute">
+        <origin xyz="0.0019755 -0.001 -0.05321" rpy="0 0 0" />
+        <parent link="right_6_link" />
+        <child link="right_7_link" />
+        <axis xyz="0.99985 0 -0.017163" />
+        <limit lower="-3.14" upper="3.14" effort="3" velocity="3" />
+    </joint>
+    <link name="right_8_link">
+        <inertial>
+            <origin xyz="-0.00398301957418321 -0.0134136832937682 -0.0357778563064842" rpy="0 0 0" />
+            <mass value="0.0420613783493527" />
+            <inertia ixx="1.32767734603927E-05" ixy="-2.59546681094369E-07" ixz="-6.27884187563449E-07" iyy="2.32342591181864E-05" iyz="-1.02481994529995E-06" izz="1.46245764998919E-05" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wow_description/meshes/right_8_link.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://wow_description/meshes/right_8_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="right_8_joint" type="revolute">
+        <origin xyz="0 0 -0.082079" rpy="0 0 0" />
+        <parent link="right_7_link" />
+        <child link="right_8_link" />
+        <axis xyz="0.99985 0 -0.017163" />
+        <limit lower="-3.14" upper="3.14" effort="3" velocity="3" />
+    </joint>
+    <transmission name="trans_left_1_joint">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="left_1_joint">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="left_1_joint_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_left_2_joint">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="left_2_joint">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="left_2_joint_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_left_3_joint">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="left_3_joint">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="left_3_joint_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_left_4_joint">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="left_4_joint">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="left_4_joint_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_left_5_joint">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="left_5_joint">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="left_5_joint_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_left_6_joint">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="left_6_joint">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="left_6_joint_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_left_7_joint">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="left_7_joint">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="left_7_joint_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_left_8_joint">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="left_8_joint">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="left_8_joint_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_right_1_joint">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="right_1_joint">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="right_1_joint_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_right_2_joint">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="right_2_joint">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="right_2_joint_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_right_3_joint">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="right_3_joint">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="right_3_joint_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_right_4_joint">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="right_4_joint">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="right_4_joint_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_right_5_joint">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="right_5_joint">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="right_5_joint_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_right_6_joint">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="right_6_joint">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="right_6_joint_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_right_7_joint">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="right_7_joint">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="right_7_joint_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_right_8_joint">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="right_8_joint">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="right_8_joint_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/</robotNamespace>
+        </plugin>
+    </gazebo>
+</robot>

@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: wow_description
+    relative_path: up_body.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/up_body.srdf
+  CONFIG:
+    author_name: robot
+    author_email: robot@a.com
+    generated_timestamp: 1723361630
